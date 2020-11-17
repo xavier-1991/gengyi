@@ -1,0 +1,70 @@
+html,
+body,
+.all-wrap,
+.all-main,
+#app {
+  height: auto;
+}
+.swiper-container{
+    height:400px;
+    margin-top:80px;
+    left: 0;
+    background: #fff;
+  }
+  .swiper-slide{
+    width: 33%;
+    height: 400px;
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ef746a !important;
+    background-color: #ef746a !important;
+  }
+  .imgList{
+    max-width: 1200px;
+    margin: 20px auto 0;
+    box-shadow: 2.5px 5px 18px 0 rgba(64,87,191,.07);
+    border-radius: 4px;
+  }
+  .title{
+    height: 46px;
+    padding-left: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .title span:nth-child(1){
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .title span:nth-child(2){
+    font-size: 13px;
+    color: #bcbcbc;
+    border-left: 1px solid #fb5f3c;
+    padding-left: 10px;
+  }
+  .img-item img{
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+
+  }
+  .img-item{
+    width: 25%;
+    box-sizing: border-box;
+    padding:10px;
+    box-sizing: border-box;
+  }
+  .img-item div{
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+  }
+  img{
+    vertical-align: middle;
+  }

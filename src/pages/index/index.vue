@@ -1,37 +1,56 @@
-<template>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="../../static/images/01.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../static/images/02.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../static/images/03.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../static/images/04.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../static/images/05.jpg">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../static/images/06.jpg">
-      </div>
-    </div>
-    <div class="swiper-pagination" />
-  </div>
+<template lang="pug">
+  div.re
+    div(class="swiper-container" v-if="1")
+      div(class="swiper-wrapper")
+        div(class="swiper-slide"  @click="toDetail")
+          img(src="../../static/images/01.jpg")
+        div(class="swiper-slide" @click="toDetail")
+          img(src="../../static/images/02.jpg")
+        div(class="swiper-slide" @click="toDetail")
+          img(src="../../static/images/03.jpg")
+        div(class="swiper-slide" @click="toDetail")
+          img(src="../../static/images/04.jpg")
+        div(class="swiper-slide" @click="toDetail")
+          img(src="../../static/images/05.jpg")
+        div(class="swiper-slide" @click="toDetail")
+          img(src="../../static/images/06.jpg")
+      div(class="swiper-pagination")
+    div.imgList(style="margin-top:20px;")
+      div.title.df.ai-center
+        span 最新文章
+        span 云想衣裳花想容
+      div.p10.df.fw
+        div.img-item(v-for="item in 6"  @click="toDetail")
+          img(src="../../static/images/01.jpg")
+          div.df.ai-center
+            p.textFlow2 文章标题文章标题
+    div.all-bottom
+      Bottom
 </template>
 
 <script>
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
+import vueWaterfallEasy from 'vue-waterfall-easy'
+import Bottom from '@/layout/bottom'
+import { setCss } from '@/utils/set-css'
 export default {
+  components: {
+    vueWaterfallEasy,
+    Bottom
+  },
   data() {
     return {
-
     }
+  },
+  created() {
+    setCss({
+      'html': { height: 'auto' },
+      'body': { height: 'auto' },
+      '#app': { height: 'auto' },
+      '.all-wrap': { height: 'auto' },
+      '.all-main': { height: 'auto' }
+    })
   },
   mounted() {
     new Swiper('.swiper-container', {
@@ -43,23 +62,17 @@ export default {
       spaceBetween: 10, // 每张的间距
       pagination: { el: '.swiper-pagination' }
     })
+  },
+  methods: {
+    getData() {
+      // this.imgArr=
+    },
+    toDetail() {
+      this.$router.push('detail')
+    }
   }
 }
 </script>
 <style>
-  .swiper-slide{
-    width: 33%;
-    height: 400px;
-  }
-  .swiper-slide img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #ef746a !important;
-    background-color: #ef746a !important;
-  }
-
+@import "./index.css"
 </style>
