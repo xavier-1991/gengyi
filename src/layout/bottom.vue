@@ -13,5 +13,8 @@ export default {
 <style scoped>
 .bottom{
   height: 100%;
+  padding:0 30px;
+  /* text-align: center; */
+  box-sizing: border-box;
 }
 </style>

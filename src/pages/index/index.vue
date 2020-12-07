@@ -41,6 +41,7 @@ export default {
   },
   data() {
     return {
+      innerWidth: window.innerWidth || 0
     }
   },
   created() {
@@ -51,14 +52,17 @@ export default {
       '.all-wrap': { height: 'auto' },
       '.all-main': { height: 'auto' }
     })
+    window.onresize = () => {
+      this.innerWidth = window.innerWidth
+    }
   },
   mounted() {
     new Swiper('.swiper-container', {
       autoplay: {
         delay: 5000
       },
-      slidesPerGroup: 3,
-      slidesPerView: 3, // 显示的数量
+      slidesPerGroup: innerWidth < 800 ? 1 : 3,
+      slidesPerView: innerWidth < 800 ? 1 : 3, // 显示的数量
       spaceBetween: 10, // 每张的间距
       pagination: { el: '.swiper-pagination' }
     })

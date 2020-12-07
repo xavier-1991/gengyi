@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(v-html="data" style="max-width:1200px;margin:80px auto 20px;text-align:center")
+  div.detail(v-html="data")
 </template>
 
 <script>
@@ -80,4 +80,24 @@ export default {
   }
 }
 </script>
+<style>
+  @media all and (min-width: 800px) {
+   .detail{
+      max-width:1200px;
+      margin:80px auto 20px;
+      text-align:center;
+    }
+  }
+  @media all and (max-width: 800px) {
+    .detail{
+      margin:80px auto 20px;
+      text-align:center;
+      width:100%;
+    }
+    .detail img{
+      width: 90% !important;
+      padding: 0 5%;
+    }
+  }
+</style>
 
